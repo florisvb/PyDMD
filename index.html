@@ -13,8 +13,6 @@
 
   
   
-  
-  
 
   
 
@@ -42,7 +40,6 @@
 
 <body class="wy-body-for-nav" role="document">
 
-   
   <div class="wy-grid-for-nav">
 
     
@@ -83,10 +80,7 @@
           
             
             
-              
-            
-            
-              <ul>
+                <ul>
 <li class="toctree-l1"><a class="reference internal" href="code.html">Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">How to contribute</a></li>
@@ -103,10 +97,8 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">PyDMD</a>
-        
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">PyDMD</a>
       </nav>
 
 
@@ -115,40 +107,23 @@
         <div class="rst-content">
           
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
-
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="#">Docs</a> &raquo;</li>
-        
-      <li>Welcome to PyDMD&#8217;s documentation!</li>
-    
-    
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Welcome to PyDMD&#8217;s documentation!</li>
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/index.txt" rel="nofollow"> View page source</a>
           
         
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -161,6 +136,10 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>PyDMD is a Python package that uses Dynamic Mode Decomposition for a data-driven model simplification based on spatiotemporal coherent structures.</p>
+<p>Dynamic Mode Decomposition (DMD) is a model reduction algorithm developed by Schmid (see &#8220;Dynamic mode decomposition of numerical and experimental data&#8221;). Since then has emerged as a powerful tool for analyzing the dynamics of nonlinear systems. DMD relies only on the high-fidelity measurements, like experimental data and numerical simulations, so it is an equation-free algorithm. Its popularity is also due to the fact that it does not make any assumptions about the underlying system. See Kutz (&#8220;Dynamic Mode Decomposition: Data-Driven Modeling of Complex Systems&#8221;) for a comprehensive overview of the algorithm and its connections to the Koopman-operator analysis, initiated in Koopman (&#8220;Hamiltonian systems and transformation in Hilbert space&#8221;), along with examples in computational fluid dynamics.</p>
+<p>In the last years many variants arose, such as multiresolution DMD, compressed DMD, forward backward DMD, and higher order DMD among others, in order to deal with noisy data, big dataset, or spurius data for example.</p>
+<p>In the PyDMD package we implemented in Python the majority of the variants mentioned above with a user friendly interface. We also provide many tutorials that show all the characteristics of the software, ranging from the basic use case to the most sofisticated one allowed by the package.</p>
+<p>The research in the field is growing both in computational fluid dynamic and in structural mechanics, due to the equation-free nature of the model.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -242,15 +221,12 @@ To install the package just type:</p>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="code.html" class="btn btn-neutral float-right" title="Code Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="code.html" class="btn btn-neutral float-right" title="Code Documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -261,7 +237,7 @@ To install the package just type:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, PyDMD contributors.
-      Last updated on Jan 05, 2018.
+      Last updated on Jan 29, 2018.
 
     </p>
   </div>
@@ -284,11 +260,9 @@ To install the package just type:</p>
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
             VERSION:'0.1',
-            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: ''
+            HAS_SOURCE:  true
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
