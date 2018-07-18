@@ -7,6 +7,7 @@ with control. SIAM Journal on Applied Dynamical Systems, 15(1), pp.142-161.
 """
 from .dmdbase import DMDBase
 import numpy as np
+import copy
 
 
 class DMDc(DMDBase):
@@ -43,14 +44,26 @@ class DMDc(DMDBase):
         self._controlin = None
         self._controlin_shape = None
 
-    @property
-    def reconstructed_data(self):
+    def reconstructed_data(self, x0=None, u=None):
         """
         Get the reconstructed data.
 
         :return: the matrix that contains the reconstructed snapshots.
         :rtype: numpy.ndarray
         """
+
+        if x0 is not None:
+            x_reconstructed = copy.copy(x0)
+            for i in range(1,u.shape[1]-1):
+                _u_ = u[:,i-1]
+                x = x_reconstructed[:,-1]
+
+                x = (self.U.dot(self._Atilde)).dot(self.U.T.conj().dot(x)) + self.B.dot(_u_)
+
+                x_reconstructed = np.hstack((x_reconstructed, np.reshape(x, [len(x), 1])))
+
+            return x_reconstructed
+
         x_reconstructed = np.reshape(self._snapshots[:, 0], [self._snapshots.shape[0], 1])
         for i in range(1,self._snapshots.shape[1]-1):
             u = self._controlin[:,i-1]
